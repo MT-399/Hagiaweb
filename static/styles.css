@@ -1,0 +1,161 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10; /* Pastikan header selalu di atas */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 5; /* Menjaga urutan tampilan */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Tombol Hubungi Kami */
+.hubungi-kami {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+    position: relative;
+    z-index: 3; /* Pastikan tombol tidak menutupi menu */
+}
+
+/* Efek hover */
+.hubungi-kami:hover {
+    background: linear-gradient(45deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+/* Tombol hamburger */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+    position: relative;
+    z-index: 4; /* Tetap di atas tombol */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 10px;
+        z-index: 6; /* Pastikan menu muncul di atas */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Menyesuaikan posisi tombol Hubungi Kami */
+    .hubungi-kami {
+        position: relative;
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-left: auto;
+        z-index: 2; /* Pastikan lebih rendah dari menu */
+    }
+}
